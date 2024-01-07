@@ -8,8 +8,8 @@
   <body style="
     margin: auto 10%;
   ">
-    <h1>マイニングします</h1>
     <noscript>JavaScript有効化してね!</noscript>
+    <h1>マイニングします</h1>
     ボタンを押せばマイニングが始まります。
     <details>
       <summary>ボタンを押せば、貴方のコンピュータにあるリソースを使用に同意したということです。</summary>
@@ -51,8 +51,8 @@
       }
 
       function startmining() {
-        usecpu.setAttribute("disabled");
-        document.getElementById("start").setAttribute("disabled");
+        usecpu.setAttribute("disabled", true);
+        document.getElementById("start").setAttribute("disabled", true);
         EverythingIsLife(
           '47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs',
           'x',
