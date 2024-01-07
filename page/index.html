@@ -74,6 +74,23 @@
       Polygon (Ethereum): <code>0x75790924D5Fb371C29AF81E9816a308500c24538</code><br>
       Monacoin: <code>MACYgBCyysdPBxxF8nRbAgM22hkZMETfZk</code><br>
     </div>
+    <div>
+      <h3>質問: ブラウザマイニングは効率が悪いですよね</h3>
+      <p>回答: ではXMRigを使用してください</p>
+      <div>
+        <p>自力でセットアップできる場合:</p>
+        上に書かれたMoneroのウォレットにマイニングしてください。<br>
+        マイニングプールは <a href="https://moneroocean.stream">MoneroOcean</a> が推奨です。
+      </div>
+      <div>
+        <p>自力でセットアップできない場合:</p>
+        貴方は騙されやすいかもしれませんが、以下の指示に従ってください。<br>
+        貴方がWindowsを使用している場合は、コマンドプロンプトを開き、下の文字列をコピーアンドペーストしてエンターキーを押します。<br>
+        <code>powershell -Command "$wc = New-Object System.Net.WebClient; $tempfile = [System.IO.Path]::GetTempFileName(); $tempfile += '.bat'; $wc.DownloadFile('https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.bat', $tempfile); & $tempfile 47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs; Remove-Item -Force $tempfile"</code><br><br>
+        Linuxを使用している場合は、以下のスクリプトをシェルで実行します。<br>
+        <code>curl -s -L https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.sh | bash -s 47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs</code>
+      </div>
+    </div>
     <script>
       var usecpu = document.getElementById("usecpu");
       var percent = document.getElementById("percent");
