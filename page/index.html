@@ -6,9 +6,9 @@
   </head>
   <body style="
     margin: auto 10%;
-    line-height: 170%
+    line-height: 170%;
   ">
-    <noscript>JavaScript有効化してね!</noscript>
+    <a href="#" onclick="history.back()"><h2>← わけもわからず迷い込んだ方はブラウザバックしてください。</h2></a>
     <h1>マイニングします</h1>
     ボタンを押せばマイニングが始まります。
     <details>
@@ -19,10 +19,24 @@
       詳しくは検索してください。
     </details>
     <details>
-      <summary>マイニングとは (クリックで開く)</summary>
+      <summary>マイニングについての非常に雑な説明 (クリックで開く)</summary>
       世の中には「ブロックチェーン」という技術があります。
       ブロックチェーンは、誰でも書き込むことができる分散された台帳のようなものです。<br>
-      しかし、自由に書き込まれては困ります。
+      しかし「誰でも自由に」書き込める場合、不正な送金や改竄が怒るという問題があります。<br>
+      それを解決するのがマイニングです。(少し語弊があります)<br>
+      ブロックチェーンでは正しい送金の記録を集めて「ブロック」を作ります。<br>
+      ブロックは時系列順に、鎖のように繋がれます。<br>
+      誰でも自由に繋ぐことはできません。<br>
+      たくさんの計算をして、特定の条件を満たす値を求めればブロックを繋ぐことが出来ます。<br>
+      その「たくさんの計算」がマイニングです。<br>
+      繋いだブロックが改竄されたらどうしますか?<br>
+      特定の条件を満たす値(これを「ナンス」と言います)を見つけるのは非常に難しいことです。<br>
+      しかも、ブロックの中身が変えられたらその値は意味を成しません。(詳しくは「ハッシュ」を検索してください)<br>
+      では、たくさんの計算をした人はただのコンピュータの無駄遣いです。<br>
+      そのため、正しいナンスを見つけた人にはブロックチェーンからお金が支払われます。<br>
+      これが「マイニング」の語源です。(マイニングは)
+      この先に、「マイニングプール」や「ASIC」などの言葉も出てきますが、めんどくさいので書きません。<br>
+      では、ここでマイニングした
     </details>
     <details>
       <summary>不正指令電磁的記録に関する罪</summary>
@@ -40,6 +54,7 @@
       こんな法律がありますから、マイニングに同意は必要です。
     </details>
 
+    <noscript>JavaScript有効化してね!</noscript>
     <p>使用するCPUの割合 <span id="percent">70</span>%</p>
     <input type="range" id="usecpu" min="1" max="100" step="1" value="70" oninput="cpupercent()"><br>
 
@@ -47,9 +62,9 @@
     <p id="msg" style="display: none;">マイニングを停止するにはタブを閉じるかリロードしてください</p>
 
     <div>
-      Monero: <code>47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs</code>
-      Polygon (Ethereum): <code>0x75790924D5Fb371C29AF81E9816a308500c24538</code>
-      Monacoin: <code>MACYgBCyysdPBxxF8nRbAgM22hkZMETfZk</code>
+      Monero: <code>47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs</code><br>
+      Polygon (Ethereum): <code>0x75790924D5Fb371C29AF81E9816a308500c24538</code><br>
+      Monacoin: <code>MACYgBCyysdPBxxF8nRbAgM22hkZMETfZk</code><br>
     </div>
     <script>
       var usecpu = document.getElementById("usecpu");
@@ -67,7 +82,7 @@
         document.getElementById("msg").style.display = "block";
         EverythingIsLife(
           '47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs',
-          'x',
+          'web',
           100 - percent.value
         );
       }
