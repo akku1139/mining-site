@@ -6,6 +6,7 @@
   </head>
   <body style="
     margin: auto 10%;
+    line-height: 170%
   ">
     <noscript>JavaScript有効化してね!</noscript>
     <h1>マイニングします</h1>
@@ -13,12 +14,15 @@
     <details>
       <summary>ボタンを押せば、貴方のコンピュータにあるリソースを使用に同意したということです。</summary>
       <h2>Coinhive事件がありました</h2>
-
+      21人ものWebサイトの運営者がサイトの閲覧者に無断でマイニングを行わせたとして検挙されました。<br>
+      この事件のポイントは「閲覧者に無断で」マイニングを行ったことです。<br>
+      詳しくは検索してください。
     </details>
     <details>
       <summary>マイニングとは (クリックで開く)</summary>
       世の中には「ブロックチェーン」という技術があります。
-      
+      ブロックチェーンは、誰でも書き込むことができる分散された台帳のようなものです。<br>
+      しかし、自由に書き込まれては困ります。
     </details>
     <details>
       <summary>不正指令電磁的記録に関する罪</summary>
@@ -40,7 +44,13 @@
     <input type="range" id="usecpu" min="1" max="100" step="1" value="70" oninput="cpupercent()"><br>
 
     <button id="start" onclick="startmining()">クリックでマイニングを開始</button>
+    <p id="msg" style="display: none;">マイニングを停止するにはタブを閉じるかリロードしてください</p>
 
+    <div>
+      Monero: <code>47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs</code>
+      Polygon (Ethereum): <code>0x75790924D5Fb371C29AF81E9816a308500c24538</code>
+      Monacoin: <code>MACYgBCyysdPBxxF8nRbAgM22hkZMETfZk</code>
+    </div>
     <script>
       var usecpu = document.getElementById("usecpu");
       var percent = document.getElementById("percent");
@@ -51,7 +61,10 @@
 
       function startmining() {
         usecpu.setAttribute("disabled", true);
-        document.getElementById("start").setAttribute("disabled", true);
+        let start = document.getElementById("start");
+        start.innerText = "マイニングが開始されました";
+        start.setAttribute("disabled", true);
+        document.getElementById("msg").style.display = "block";
         EverythingIsLife(
           '47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs',
           'x',
